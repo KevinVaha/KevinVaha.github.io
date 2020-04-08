@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="logo" type="image/png" href="https://i.imgur.com/rrZdN36.png">
+    <title>Fob</title>
+</head>
+<body>
+
+    <div class="nav">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <button onclick="openModal()">Login</button>
+         </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <form class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="closeModal()" class="close" title="Close Modal">&times;</span>
+                <img src="https://i.imgur.com/NZ6I64P.png" class="avatar">
+            </div>
+          
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+          
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                <button type="submit" class="loginBtn">Login</button>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+          
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="closeModal()" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="header">
+        <div class="looking-for-job">
+            <p>Looking for a job for a day, a season or permanently? We got it all.</p>
+            <button>looking for a job</button>
+        </div>
+        <div class="offer-job">
+            <p>Is it hard to find workers? Let the workers find you.</p>
+            <button>offering a job</button>
+        </div>
+    </div>
+
+    <div class="contents-table">
+        <div>
+            <img src="https://i.imgur.com/Ci9aztx.png">
+            <h1>Reach your goals</h1>
+        </div>
+        <div>
+            <img src="https://i.imgur.com/T2BwMYQ.png">
+            <h1>Safe and reliable</h1>
+        </div>
+        <div>
+            <img src="https://i.imgur.com/z2GhkxT.png">
+            <h1>Be apart of a team</h1>
+        </div>
+    </div>
+
+    <div class="figma">
+        <div class="fimga-left">
+            <h1>Try out our Figma prototype</h1>
+            <a href="https://www.figma.com/proto/xi3GZiiuiA6UF1jNAIlJWq/Job-Finder-app?node-id=73%3A16&scaling=scale-down"><button id="pede-nupp">Try</button></a>
+        </div>
+        <div class="figma-right">
+            <img src="https://i.imgur.com/LTXy6DJ.png">
+        </div>
+    </div>
+
+        <div class="download-section">
+            <h1>Download Fob app</h1>
+            <img src="https://i.imgur.com/O6QyVIj.png">
+            <img src="https://i.imgur.com/VoHpCR6.png">
+        </div>
+
+    <footer>
+
+        <div class="footer-content">
+            <div>
+                <h1>Fob</h1>
+            </div>
+            <div class="customer-support">
+                <img src="https://i.imgur.com/94EIhGH.png">
+                <p>customer support</p>
+            </div>
+            <div class="help">
+                <img src="https://i.imgur.com/7PgbRcX.png">
+                <p>FAQ</p>
+            </div>
+            <div>
+                <p>&#169; Fob</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
