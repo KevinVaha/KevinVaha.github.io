@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="logo" type="image/png" href="https://i.imgur.com/rrZdN36.png">
+    <title>Fob</title>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="ads.html">Job advertisements</a>
+        </div>
+    </div>
+
+    <div class="modal" id="adModal">
+        <div class="modal-content">
+            <span id="modalClose" class="close">&times;</span>
+            <div class="modal-inner">
+                <div>
+                    <p>Company name</p>
+                    <div class="special">
+                        <input type="text" id="companyName">
+                    </div>
+                </div>
+
+                <div>
+                    <p>E-mail address</p>
+                    <div class="special">
+                        <input type="text" id="emailAddress">
+                    </div>
+                </div>
+
+                <div>
+                    <p>Phone number</p>
+                    <div class="special">
+                        <input type="text" id="phoneNumber">
+                    </div>
+                </div>
+
+                <div>
+                    <p>Occupation</p>
+                    <select id="occupation">
+                        <option value selected>Choose an occupation</option>
+                        <option value="Lawyer">Lawyer</option>
+                        <option value="Security guard">Security guard</option>
+                        <option value="Project manager">Project manager</option>
+                        <option value="Sales expert">Sales expert</option>
+                        <option value="Carpenter">Carpenter</option>
+                        <option value="Accountant">Accountant</option>
+                        <option value="Bucher">Bucher</option>
+                        <option value="Customer service">Customer service</option>
+                        <option value="Microbiologist">Microbiologist</option>
+                        <option value="Front-end engineer">Front-end engineer</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Welder">Welder</option>
+                        <option value="Life guard">Life guard</option>
+                    </select>
+                </div>
+
+                <div>
+                    <p></p>
+                    <input type="text" value="If not included in list write here" id="manualOccupation">
+                </div>
+
+                <div>
+                    <p>Description</p>
+                    <textarea type="text" id="description" class="big-input"></textarea>
+                </div>
+
+                <div>
+                    <P>Requirements</P>
+                    <textarea type="text" id="requirements" class="big-input"></textarea>
+                </div>
+
+                <div>
+                    <P>Choose category</P>
+                    <select id="category">
+                        <option value selected>Choose a category</option>
+                        <option value="Administration">Administration</option>
+                        <option value="IT">IT</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Transport/logistics">Transport/logistics</option>
+                        <option value="Industry">Industry</option>
+                        <option value="Construction/real estate">Construction/real estate</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Customer service">Customer service</option>
+                        <option value="Law">Law</option>
+                        <option value="Catering">Catering</option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <p>Location</p>
+                    <select id="jobLocation">
+                        <option value selected>Select location</option>
+                        <option value="Tallinn">Tallinn</option>
+                        <option value="Tartu">Tartu</option>
+                    </select>
+                </div>
+
+                <div>
+                    <p>Pay before taxes</p>
+                    <input type="text" id="pay">
+                    <select id="payHM">
+                        <option value="Per month" selected>Per month</option>
+                        <option value="Per hour">Per hour</option>
+                    </select>
+                </div>
+
+                <button id="postAd">Post ad</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="adNav">
+        <button id="openAd">Post ad</button>
+        <input type="text" id="search" placeholder="Search...">
+    </div>
+
+    <div class="jobOffer" id="offer">
+        <ul id="dummy-ads"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -31,46 +31,46 @@ a {
 }
 
 .header {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    background-image: url("https://images.unsplash.com/photo-1557434773-7fabb2f01f7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=707&q=80");
+    background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    color: white;
-    height: 100vh;
-    border-bottom: 3px solid var(--color1);
+    text-align: center;
+    height: 350px;
+    width: 100%;
+    padding-top: 350px;
 }
 
-.looking-for-job,
-.offer-job {
-    padding: 15px;
-    border-radius: 15px;
-    border: 2px solid var(--color1);
-    background-color: var(--color2-lo);
+.header div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
 }
 
-.looking-for-job button,
-.offer-job button {
-    margin-top: 5%;
-    padding: 15px;
+.header hr {
+    width: 25%;
+    height: 20px;
+    border: none;
     border-radius: 15px;
-    background-color: var(--color-white);
-    border: 2px solid var(--color1);
-    border-radius: 15px;
+    background-color: var(--color1);
+    display: block;
+    margin: 25px auto;
+}
+
+.header div h1 {
+    font-size: 125px;
 }
 
 .header img {
-    margin-bottom: 190px;
+    height: 150px;
 }
 
-.header h1 {
-    font-size: 40px;
-    text-transform: uppercase;
+.header div p {
+    font-size: 50px;
+    color: white;
+    font-style: italic;
+    padding: 5px;
 }
 
 .nav {
@@ -79,6 +79,7 @@ a {
     width: 100%;
     position: fixed;
     z-index: 1;
+    height: 50px;
 }
 
 .nav button {
@@ -99,7 +100,9 @@ a {
 .nav div {
     display: flex;
     justify-content: center;
-    margin: 0 25px;
+    align-items: center;
+    margin: 0px 25px;
+    background-color: var(--color1);
 }
 
 .nav a:hover,
@@ -162,121 +165,12 @@ button:hover {
     color: var(--color1);
 }
 
-.download-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    background-color: var(--color-white);
-}
-
-.download-section img {
-    height: 40px;
-    margin-top: 20px;
-}
-
-footer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 600px;
-    background-color: var(--color2);
-}
-
-.footer-content {
-    margin: 0 100px;
-}
-
-.footer-content div {
-    color: var(--color-white);
-}
-
-.customer-support {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: var(--color-white);
-}
-
-.customer-support img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.help {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: var(--color-white);
-}
-
-.help img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.copyright {
-    color: var(--color-white);
-}
-
-/* login modal */
-
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-
-button:hover {
-    opacity: 0.9;
-}
-
-.loginBtn {
-    background-color: var(--color2);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-    border: none;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 20%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
+/* Modal */
 .modal {
     display: none;
     position: fixed;
     z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -284,63 +178,186 @@ span.psw {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto;
+    margin: auto;
+    padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    /* change modal size */
+    width: 35%;
 }
 
 .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
     cursor: pointer;
 }
 
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+.colse:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
 }
 
-@-webkit-keyframes animatezoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-
-    to {
-        -webkit-transform: scale(1)
-    }
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3% 20%;
 }
 
-@keyframes animatezoom {
-    from {
-        transform: scale(0)
-    }
-
-    to {
-        transform: scale(1)
-    }
+.modal-inner p,
+input,
+button {
+    margin-bottom: 2%;
 }
 
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
+#postAd {
+    width: 33%;
+    margin: auto;
+    margin-top: 15px;
+}
 
-    .cancelbtn {
-        width: 100%;
-    }
+.modal-inner div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.modal-inner div :not(.special) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-inner div p {
+    margin-right: 2%;
+    text-align: right;
+    width: 123px;
+}
+
+.special {
+    background-color: rgba(100, 148, 237, 0.534);
+    padding: 10px;
+}
+
+
+#manualOccupation {
+    width: 179px;
+}
+
+/* Dropdown */
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 600px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {display: block;}
+
+.about-us-div {
+    padding-top: 5%;
+    margin-right: 50%;
+    font-size: 25px;
+    text-align: justify;
+}
+
+.about-us-div p {
+    margin-top: 10px;
+}
+
+#openAd, #search {
+    margin-top: 2.5%;
+    height: 38px;
+    width: 10%;
+    margin-right: 1%;
+}
+
+
+.adNav {
+    display: flex;
+}
+
+#dummy-ads li{
+    margin: 1%;
+    list-style-type: none;
+    font-size: 25px;
+}
+
+.ad {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ad p{
+    margin: 1%;
+}
+
+.ad p {
+    font-size: 25px;
+}
+
+.ad button {
+    margin: auto;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 2px solid royalblue;    
+    background: transparent;
+}
+
+.ad button:hover {
+    background: royalblue;
+    color: white;
+}
+
+#postAd {
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 2px solid royalblue;    
+    background: transparent;
+}
+
+#postAd:hover {
+    background: royalblue;
+    color: white;
 }
