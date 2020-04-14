@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    *{
+        background-color: rgba(255, 255, 255, 0.705);
+    }
+
+    img {
+        width: 10%;
+        margin: auto;
+        display: block;
+    }
+
+    div {
+        display: block;
+    }
+
+    #forecast {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .box {
+        padding: 1em;
+        margin: 1em;
+        width: 25%;
+        background: royalblue;
+        border-radius: 15px;
+        border: 3px solid rgb(45, 71, 148);
+    }
+
+    .box img, p {
+        display: block;
+        background-color: royalblue;
+    }
+
+    p {
+        text-align: center;
+        display: block;
+        color: white;
+    }
+
+</style>
+
+<body>
+    
+    <div>
+        <input id="input-days" value="5"/>
+        <button onclick="generate();">Generate</button>
+    </div>
+
+    <div id="forecast"></div>
+
+    <script>
+
+        function generate() {
+
+            var days = document.getElementById("input-days").value;
+            var forecast = document.getElementById("forecast");
+            
+            console.log(days);
+
+            var temperatures = [];
+            var minRandom = -15
+            var maxRandom = 35;
+            var avg = 0;
+
+            var coldWeather = ["cloudy" , "sunny" , "snowy"];
+            var warmWeather = ["cloudy" , "sunny" , "rainy"];
+
+            // generate temperatures
+
+            for (var index = 0; index < days; index++) {
+                temperatures.push(Math.floor(Math.random() * (maxRandom - minRandom)) + minRandom);
+                avg += temperatures[index];
+            }
+
+            // console log all temperatures sorted
+
+            temperatures.sort(function (a, b) {
+                return a-b;
+            });
+
+            console.log(temperatures);
+
+            
+
+            for (index = 0; index < temperatures.length; index++) {
+
+                // weather div
+
+                var box = document.createElement("div");
+                box.classList.add("box");
+
+                //  random images
+
+                var randomColdWeather = coldWeather[Math.floor(Math.random() * coldWeather.length)];
+                var randomWarmWeather = warmWeather[Math.floor(Math.random() * warmWeather.length)];
+                
+                var icon = document.createElement("img");
+                
+                if (temperatures[index] <= 0) {
+                    icon.src = randomColdWeather + ".png";
+                } else {
+                    icon.src = randomWarmWeather + ".png";
+                }
+                box.appendChild(icon);
+
+                var day = document.createElement("p");
+                day.innerHTML = "Day " + (index + 1);
+                box.appendChild(day);
+
+                var measurment = document.createElement("p");
+                measurment.innerHTML = temperatures[index] + "&deg;";
+                box.appendChild(measurment);
+
+                forecast.appendChild(box);
+            }
+
+        }
+/*
+        var today = document.createElement("div");
+            document.body.appendChild(today);
+
+            var todayMax = document.createElement('p');
+            todayMax.innerHTML = "Max temperature is : " + temperatures[temperatures.length - 1];
+            today.appendChild(todayMax);
+
+            var todayMin = document.createElement('p');
+            todayMin.innerHTML = "Min temperature is : " + temperatures[0];
+            today.appendChild(todayMin);
+
+            var todayAvg = document.createElement('p');
+            todayAvg.innerHTML = "Avrage temperatues: " + avg / temperatures.length;
+            today.appendChild(todayAvg);*/
+
+    </script>
+</body>
+</html>
