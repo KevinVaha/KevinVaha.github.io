@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./todo.css" />
+    <title>RemindAlot Calendar</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <div id="myDIV" class="header">
+          <h2 style="margin: 5px;">To Do List</h2>
+          <input type="text" id="myInput" placeholder="Title..." />
+          <span onclick="newElement()" class="addBtn" id="addButton">Add</span>
+        </div>
+        <ul id="myUL">
+          <li>Hit the gym</li>
+          <li class="checked">Pay bills</li>
+          <li>Meet George</li>
+          <li>Buy eggs</li>
+          <li>Read a book</li>
+          <li>Organize office</li>
+        </ul>
+      </main>
+
+      <section class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="form">
+            <input
+              type="text"
+              id="taskTitle"
+              placeholder="Add title..."
+              required
+              autocomplete="off"
+            />
+            <div class="time">
+              <input type="date" id="taskDate" />
+              <input type="time" id="taskTime" />
+            </div>
+            <textarea
+              id="taskDesc"
+              cols="30"
+              rows="10"
+              style="resize: none;"
+            ></textarea>
+            <button id="taskSave">Save task</button>
+          </div>
+        </div>
+      </section>
+      <sidebar>
+        <div class="logo">logo</div>
+        <div class="avatar">
+          <div class="avatar__img">
+            <img src="https://picsum.photos/70" alt="avatar" />
+          </div>
+          <div class="avatar__name">John Smith</div>
+        </div>
+        <nav class="menu">
+          <a class="menu__item" href="index.html">
+            <i class="menu__icon fa fa-home"></i>
+            <span class="menu__text">overview</span>
+          </a>
+          <!-- <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-envelope"></i>
+            <span class="menu__text">messages</span>
+          </a> -->
+          <a class="menu__item" href="calendar.html">
+            <i class="menu__icon fa fa-calendar"></i>
+            <span class="menu__text">calendar</span>
+          </a>
+          <a class="menu__item menu__item--active" href="#">
+            <i class="menu__icon fa fa-list"></i>
+            <span class="menu__text">To do</span>
+          </a>
+          <!-- <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-bar-chart"></i>
+            <span class="menu__text">goals</span>
+          </a>
+          <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-trophy"></i>
+            <span class="menu__text">achivements</span>
+          </a>
+          <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-sliders"></i>
+            <span class="menu__text">measurements</span>
+          </a> -->
+        </nav>
+        <div class="copyright">RemindALot &copy; 2020</div>
+      </sidebar>
+    </div>
+    <script src="./todo.js"></script>
+  </body>
+</html>

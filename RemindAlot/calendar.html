@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>RemindAlot Calendar</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <div class="toolbar">
+          <div class="toggle">
+            <div class="toggle__option">week</div>
+            <div class="toggle__option toggle__option--selected">month</div>
+          </div>
+          <div class="monthAndYear">
+            <i class="fa fa-chevron-left" onclick="previousMonth()"></i>
+            <div class="current-month" id="currentMonthAndYear"></div>
+            <i class="fa fa-chevron-right" onclick="nextMonth();"></i>
+          </div>
+          <div class="search-input">
+            <input type="text" value="What are you looking for?" />
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <div class="calendar">
+          <div class="calendar__header">
+            <div>mon</div>
+            <div>tue</div>
+            <div>wed</div>
+            <div>thu</div>
+            <div>fri</div>
+            <div>sat</div>
+            <div>sun</div>
+          </div>
+          <div id="calendarBody">
+            <div class="calendar__week">
+              <div class="calendar__day day">1</div>
+              <div class="calendar__day day">2</div>
+              <div class="calendar__day day">3</div>
+              <div class="calendar__day day">4</div>
+              <div class="calendar__day day">5</div>
+              <div class="calendar__day day">6</div>
+              <div class="calendar__day day">7</div>
+            </div>
+            <div class="calendar__week">
+              <div class="calendar__day day">8</div>
+              <div class="calendar__day day">9</div>
+              <div class="calendar__day day">10</div>
+              <div class="calendar__day day">11</div>
+              <div class="calendar__day day">12</div>
+              <div class="calendar__day day">13</div>
+              <div class="calendar__day day">14</div>
+            </div>
+            <div class="calendar__week">
+              <div class="calendar__day day">15</div>
+              <div class="calendar__day day">16</div>
+              <div class="calendar__day day">17</div>
+              <div class="calendar__day day">18</div>
+              <div class="calendar__day day">19</div>
+              <div class="calendar__day day">20</div>
+              <div class="calendar__day day">21</div>
+            </div>
+            <div class="calendar__week">
+              <div class="calendar__day day">22</div>
+              <div class="calendar__day day">23</div>
+              <div class="calendar__day day">24</div>
+              <div class="calendar__day day">25</div>
+              <div class="calendar__day day">26</div>
+              <div class="calendar__day day">27</div>
+              <div class="calendar__day day">28</div>
+            </div>
+            <div class="calendar__week">
+              <div class="calendar__day day">29</div>
+              <div class="calendar__day day">30</div>
+              <div class="calendar__day day">31</div>
+              <div class="calendar__day day">1</div>
+              <div class="calendar__day day">2</div>
+              <div class="calendar__day day">3</div>
+              <div class="calendar__day day">4</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <section class="modal" id="taskCreate">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="form">
+            <input
+              type="text"
+              id="taskTitle"
+              placeholder="Add title..."
+              required
+              autocomplete="off"
+            />
+            <div class="time">
+              <input type="date" id="taskDate" />
+              <input type="time" id="taskTime" />
+            </div>
+            <textarea
+              id="taskDesc"
+              cols="30"
+              rows="10"
+              style="resize: none;"
+            ></textarea>
+            <button id="taskSave">Save task</button>
+          </div>
+        </div>
+      </section>
+      <section class="modal" id="taskViewModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="form">
+            <input
+              type="text"
+              id="taskViewTitle"
+              placeholder="Add title..."
+              required
+              autocomplete="off"
+            />
+            <div class="time">
+              <input type="date" id="taskViewDate" />
+              <input type="time" id="taskViewTime" />
+            </div>
+            <textarea
+              id="taskViewDesc"
+              cols="30"
+              rows="10"
+              style="resize: none;"
+            ></textarea>
+          </div>
+        </div>
+      </section>
+      <sidebar>
+        <div class="logo">logo</div>
+        <div class="avatar">
+          <div class="avatar__img">
+            <img src="https://picsum.photos/70" alt="avatar" />
+          </div>
+          <div class="avatar__name">John Smith</div>
+        </div>
+        <nav class="menu">
+          <a class="menu__item" href="index.html">
+            <i class="menu__icon fa fa-home"></i>
+            <span class="menu__text">overview</span>
+          </a>
+          <!-- <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-envelope"></i>
+            <span class="menu__text">messages</span>
+          </a> -->
+          <a class="menu__item menu__item--active" href="#">
+            <i class="menu__icon fa fa-calendar"></i>
+            <span class="menu__text">calendar</span>
+          </a>
+          <a class="menu__item" href="Todo.html">
+            <i class="menu__icon fa fa-list"></i>
+            <span class="menu__text">Todo</span>
+          </a>
+          <!-- <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-bar-chart"></i>
+            <span class="menu__text">goals</span>
+          </a>
+          <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-trophy"></i>
+            <span class="menu__text">achivements</span>
+          </a>
+          <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-sliders"></i>
+            <span class="menu__text">measurements</span>
+          </a> -->
+        </nav>
+        <div class="copyright">RemindALot &copy; 2020</div>
+      </sidebar>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
