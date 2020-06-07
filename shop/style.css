@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainColor: #28334aff;
+    --bodyColor: rgb(68, 88, 131);
+    --fontColor: #d6d6d6;
+    --border: #9e9e9e;
+    --red: #F65158;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bodyColor);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vh;
+    min-height: 8vh;
+    background-color: var(--mainColor);
+}
+
+.logo {
+    color: var(--fontColor);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+}
+
+.nav-links a {
+    color: var(--fontColor);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nav-links li {
+    color: var(--fontColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    height: 10vh;
+}
+
+#cartIcon {
+    cursor: pointer;
+}
+
+.cartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.cartContainer p {
+    color: var(--fontColor);
+    position: absolute;
+    right: 8%;
+    top: 20%;
+    font-weight: 900;
+    background-color: var(--mainColor);
+    border: 1px solid var(--fontColor);
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.cartContainer img {
+    height: 25px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--fontColor);
+    margin: 5px;
+}
+
+#container {
+    background-color: var(--bodyColor);
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-gap: 10vh;
+    color: #444;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.grid-item {
+    color: var(--mainColor);
+    box-shadow: 10px 10px rgba(40, 51, 74, 0.6);
+    background-color: var(--fontColor);
+    border: 1px transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+.grid-item img {
+    height: 20%;
+}
+
+.price, .title {
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.grid-item button {
+    padding: 10px;
+    border: 2px solid var(--mainColor);
+    border-radius: 5px;   
+    background-color: var(--fontColor);
+    color: var(--mainColor);
+    cursor: pointer;
+}
+
+.grid-item button:hover {
+    background-color: var(--mainColor);
+    color: var(--fontColor);
+}
+
+.cart-modal {
+    position: absolute;
+    right: 0px;
+    top: 10vh;
+    width: 30vh;
+    height: auto;
+    max-height: 50vh;
+    overflow: auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fontColor);
+    border-bottom: 10px solid var(--border);
+    border-left: 10px solid var(--border);
+    border-right: 10px solid var(--border);
+    box-shadow: 10px 10px rgba(40, 51, 74, 0.6);
+    border-radius: 0px 0px 5px 5px;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;  
+    border-top: 1px solid var(--mainColor);  
+}
+
+.total p {
+    margin:  10px 0px 10px 10px;
+}
+
+.modal-active {
+    display: flex;
+}
+
+.modal-close {
+    color: var(--red);
+}
+
+.modal-content {
+    height: 100%;
+    width: 80%;
+}
+
+.modal-content div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin: 5vh 0px;
+}
+
+.modal-content div img {
+    width: 20%;
+}
+
+#removeFromCart {
+    color: var(--red);
+    font-size: 48px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1330px) {
+    #container {
+       /* grid-template-columns: 350px 350px 350px;
+        grid-template-rows: 400px 400px 400px 400px 400px;*/
+        grid-template-columns: 25% 25% 25%;
+        grid-template-rows: 10% 10% 10% 10% 10%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .nav-links {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--mainColor);
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+    }
+
+    .nav-links a {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        margin: auto;
+        padding-top: 10%;
+    }
+
+    .nav-links li a:hover {
+        background-color: var(--fontColor);
+        color: black;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        height: 15vh;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    #container {
+        grid-template-columns: 60%;
+        grid-template-rows: 45vh;
+    }
+
+    .grid-item img {
+        height: 35%;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in;
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* snackbar */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: var(--mainColor);
+    color: var(--fontColor);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
