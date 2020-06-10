@@ -142,25 +142,21 @@ for (let index = 0; index < items.length; index++) {
 
   let addButton = document.createElement('button');
   addButton.innerHTML = 'Add to cart';
-  addButton.onclick = function () {
-    asd();
-    /* cart.push(item);
-        snackbarMessege.innerHTML = item.title + " has been added to the cart!";
-        toggleSnackbar();
-        total += item.price;
-        cartTotal.innerHTML = "Total : " + total;
-        cartIndicator.innerHTML = cart.length;
-        showCart();*/
-    //checkCart();
-    //change button to make sure the user cannot add the item in the cart again
-    //addButton.disabled = "true";
-  };
-
-  //kõik väga putsis, tee uuesti kogu lisamis ja eemaldamis section
-
-  //remove from cart
-
   itemContainer.appendChild(addButton);
+  addButton.onclick = function () {
+    cart.push(item);
+    snackbarMessege.innerHTML = item.title + " has been added to the cart!";
+    toggleSnackbar();
+    total += item.price;
+    cartTotal.innerHTML = "Total : " + total;
+    cartIndicator.innerHTML = cart.length;
+    showCart();
+    checkCart();
+    itemContainer.removeChild(addButton);
+    let sold = document.createElement("p");
+    sold.innerHTML = "Sold!";
+    itemContainer.appendChild(sold);
+  };
 }
 
 var cartModal = document.getElementById('modal');
@@ -176,12 +172,12 @@ if (cart.length > 0) {
 function checkCart() {
   if (cart === undefined || cart.length == 0) {
     console.log('ei');
-    //        cartModal.classList.remove("modal-active");
+    cartModal.classList.remove("modal-active");
   } else {
-    /*modalToggle.onclick = function () {
-            cartModal.classList.toggle("modal-active");
-        }*/
-    console.log('midagi on');
+    modalToggle.onclick = function () {
+      cartModal.classList.toggle("modal-active");
+    }
+    //console.log('midagi on');
     // cart = [];
   }
 }
@@ -199,10 +195,6 @@ function test() {
       console.log(total);
     }
   }
-}
-
-function asd() {
-  console.log('asd');
 }
 
 function showCart() {
@@ -224,23 +216,20 @@ function showCart() {
     cartImage.src = item.imageURL;
     cartDiv.appendChild(cartImage);
 
-    /*let removeFromCart = document.createElement("p")
-        removeFromCart.innerHTML = "&times;"
-        removeFromCart.classList.add("modal-close");
-        cartDiv.appendChild(removeFromCart);
-        removeFromCart.addEventListener('click', function () {
-            if (cart.includes(item.title)) {
-                snackbarMessege.innerHTML = item.title + " has been removed from the cart!";
-                toggleSnackbar();
-                total -= item.price;
-                cart.pop(item.title);
-                cartIndicator.innerHTML = cart.length;
-                cartTotal.innerHTML = "Total : " + total.toFixed(2) + "&euro;";
-                cartDiv.parentNode.removeChild(cartDiv);
-                checkCart();
-
-            }
-        });*/
+    let removeFromCart = document.createElement("p")
+      removeFromCart.innerHTML = "&times;"
+      removeFromCart.classList.add("modal-close");
+      cartDiv.appendChild(removeFromCart);
+      removeFromCart.addEventListener('click', function () {
+        snackbarMessege.innerHTML = item.title + " has been removed from the cart!";
+        toggleSnackbar();
+        total -= item.price;
+        cart.pop(item.title);
+        cartIndicator.innerHTML = cart.length;
+        cartTotal.innerHTML = "Total : " + total.toFixed(2) + "&euro;";
+        cartDiv.parentNode.removeChild(cartDiv);
+        checkCart();
+      });
   }
 }
 
@@ -249,9 +238,7 @@ const navSlide = () => {
   const nav = document.querySelector('.nav-links');
   const navLinks = document.querySelectorAll('.nav-links li');
   burger.addEventListener('click', () => {
-    //Toggle nav
     nav.classList.toggle('nav-active');
-    //Animate Links
     navLinks.forEach((link, index) => {
       if (link.style.animation) {
         link.style.animation = '';
