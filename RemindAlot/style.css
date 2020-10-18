@@ -4,13 +4,6 @@
   box-sizing: border-box;
 }
 
-/**
- * ALL the UI design credit goes to:
- * https://www.sketchappsources.com/free-source/2676-calendar-template-sketch-freebie-resource.html
- */
-
-/* WRAPPER */
-
 .wrapper {
   display: grid;
   grid-template-rows: 70px 1fr 70px;
@@ -47,6 +40,9 @@ sidebar {
     'copyright menu avatar';
 }
 .logo {
+  color: #28324b;
+  font-weight: 500;
+  margin: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,6 +52,7 @@ sidebar {
 }
 .avatar {
   grid-area: avatar;
+  margin: 1em;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -73,6 +70,7 @@ sidebar {
   grid-area: copyright;
 }
 .menu {
+  margin-top: 10em;
   grid-area: menu;
   display: flex;
   align-items: center;
@@ -108,6 +106,8 @@ sidebar {
     flex-direction: column;
   }
   .avatar__name {
+    color: #28324b;
+    font-weight: 500;
     margin: 1em 0;
   }
   .avatar__img > img {
@@ -223,6 +223,7 @@ main {
 }
 
 .calendar__day {
+  position: relative;
   border: 1px solid #e1e1e1;
   cursor: pointer;
 }
@@ -410,19 +411,23 @@ input[type='time'] {
 }
 
 .taskIcon {
-  margin-top: 30px;
-  padding: 5px 10px;
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1.5em;
   border-radius: 6px;
-  background-color: #28324b;
+  z-index: 1;
+  background: #28324b;
+  cursor: pointer;
   color: #ffffff;
   font-weight: 500;
-  z-index: 1;
+  padding-left: 5px;
 }
 
 .taskIcon:hover {
   background-color: #4285f4;
-}
-
-.disabled {
-  pointer-events: none;
 }
