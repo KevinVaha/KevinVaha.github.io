@@ -1,0 +1,230 @@
+/* ====== */
+/* Colors */
+/* ====== */
+:root {
+  --background-color: #131b28;
+  --secondary-color: #233758;
+  --contrast-color: #f24452;
+  --form-hover: #f0293a;
+  --white: #ffffff;
+  --low-opacity-white: rgb(255, 255, 255, 0.5);
+}
+
+/* ======= */
+/* Margins */
+/* ======= */
+:root {
+  --small-margin: 1rem;
+  --medium-margin: 2.5rem;
+  --big-margin: 5rem;
+  --burger-icon: 0.25rem;
+}
+
+/* ======== */
+/* Paddings */
+/* ======== */
+:root {
+  --small-padding: 1rem;
+  --medium-padding: 2rem;
+  --big-padding: 5rem;
+}
+
+/* ============ */
+/* Scroll wheel */
+/* ============ */
+/* ================ */
+/* Hidden but works */
+/* ================ */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ====================== */
+/* Custom selection color */
+/* ====================== */
+::selection {
+  background-color: var(--contrast-color);
+  color: var(--white);
+}
+
+/* ========== */
+/* Typography */
+/* ========== */
+body {
+  font-family: "Raleway", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.intro-text {
+  font-family: "Archivo", sans-serif;
+}
+.secondary-slogan {
+  font-family: "Poiret One", cursive;
+}
+
+/* ========= */
+/* Font size */
+/* ========= */
+:root {
+  --small-font: 1.5rem;
+  --medium-font: 2rem;
+  --big-font: 3rem;
+}
+
+/* =========== */
+/* General CSS */
+/* =========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--background-color);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* ====== */
+/* Navbar */
+/* ====== */
+.nav-links {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+}
+
+.nav-links li {
+  margin-top: var(--medium-margin);
+  margin-bottom: var(--medium-margin);
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.nav-links li a {
+  color: var(--low-opacity-white);
+  transition: 0.5s;
+}
+
+.nav-links li a:hover {
+  color: var(--white);
+  font-size: 5rem;
+}
+
+/* =========== */
+/* Burger icon */
+/* =========== */
+
+.burger {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.divs > div {
+  height: 2px;
+  margin-top: var(--burger-icon);
+  margin-bottom: var(--burger-icon);
+  background-color: var(--white);
+}
+
+.line1 {
+  width: 25px;
+}
+.line2 {
+  width: 20px;
+}
+.line3 {
+  width: 15px;
+}
+.line4 {
+  width: 25px;
+}
+
+.burger p {
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+/* ============ */
+/* Close button */
+/* ============ */
+.divs,
+.close {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: var(--small-margin);
+}
+.close {
+  color: var(--low-opacity-white);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.close-div {
+  opacity: 0;
+  display: none;
+}
+
+.menu-div,
+.close-div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.close-div {
+  cursor: pointer;
+  position: absolute;
+  top: 2.5rem;
+  right: 5rem;
+  margin-left: var(--small-margin);
+}
+
+.close-text {
+  display: none;
+  color: var(--low-opacity-white);
+  text-transform: uppercase;
+}
+
+.menu,
+.divs {
+  display: inline-block;
+}
+
+.logo {
+  font-size: var(--medium-font);
+  color: var(--white);
+}
+
+/* ========== */
+/* Responsive */
+/* ========== */
+@media only screen and (min-width: 600px) {
+  /* ====== */
+  /* Tablet */
+  /* ====== */
+}
+@media only screen and (min-width: 768px) {
+  /* ======= */
+  /* Desktop */
+  /* ======= */
+}

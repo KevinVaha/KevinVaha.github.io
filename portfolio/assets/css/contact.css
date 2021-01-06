@@ -1,0 +1,106 @@
+@import "assets/css/main.css";
+
+/* ====== */
+/* Navbar */
+/* ====== */
+nav {
+  width: 100%;
+  min-height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--big-padding);
+  padding-right: var(--big-padding);
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "contact-me" "contact-form";
+  min-height: 90vh;
+}
+
+.contact-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: contact-me;
+  font-size: var(--big-font);
+  color: var(--white);
+  padding: var(--big-padding);
+}
+.contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  grid-area: contact-form;
+  padding-left: var(--big-padding);
+  padding-right: var(--big-padding);
+  color: var(--white);
+}
+
+.contact-form {
+  margin: auto;
+  width: 40%;
+}
+
+.contact-form > div {
+  width: 100%;
+}
+
+.contact-form label {
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.contact-form input {
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contact-form input:focus {
+  border-bottom: 2px solid #1a883f;
+}
+
+.contact-form textarea {
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 3px;
+  width: 100%;
+  font-family: inter;
+  font-weight: normal;
+}
+
+.contact-form textarea:focus {
+  border-bottom: 2px solid #1a883f;
+}
+
+.contact-form button {
+  min-height: 1rem;
+  font-size: 19px;
+  width: 100%;
+  margin-top: 25px;
+  border: none;
+  padding: 12px 20px;
+  background-color: var(--contrast-color);
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: var(--form-hover);
+}

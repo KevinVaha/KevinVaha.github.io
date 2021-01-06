@@ -1,0 +1,229 @@
+@import "assets/css/main.css";
+
+/* ============ */
+/* Hero section */
+/* ============ */
+.hero-section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  padding-right: var(--big-padding);
+  padding-left: var(--big-padding);
+  background-color: var(--background-color);
+  color: var(--white);
+}
+
+/* ====== */
+/* Navbar */
+/* ====== */
+nav {
+  z-index: 10;
+  width: 100%;
+  min-height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============ */
+/* Hero content */
+/* ============ */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.hero-content > p {
+  margin-bottom: var(--medium-margin);
+  font-weight: bold;
+}
+.crossed {
+  text-decoration: line-through;
+}
+.secondary-slogan {
+  color: var(--low-opacity-white);
+  font-weight: lighter;
+  font-size: var(--medium-font);
+  text-align: left;
+}
+
+.main-slogan {
+  font-size: var(--big-font);
+  font-weight: normal;
+}
+/* ===================== */
+/* Scroll down indicator */
+/* ===================== */
+
+#scroll-down {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#scroll-down > .secondary-slogan {
+  font-size: var(--small-font);
+}
+
+#inicator {
+  margin-right: var(--small-margin);
+  position: relative;
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--white);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+#inicator::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: var(--white);
+  border-radius: 100%;
+  -webkit-animation: sdb10 2s infinite;
+  animation: sdb10 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb10 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb10 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ========= */
+/* Portfolio */
+/* ========= */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  background-color: var(--contrast-color);
+  padding-right: var(--big-padding);
+  padding-left: var(--big-padding);
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.image {
+  position: relative;
+  margin-top: var(--big-margin);
+  margin-bottom: var(--big-margin);
+  -webkit-box-shadow: 10px 15px 13px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 15px 13px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 15px 13px 1px rgba(0, 0, 0, 0.3);
+}
+
+figure {
+  overflow: hidden;
+}
+
+.zoom-in img {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+.zoom-in:hover img {
+  transform: scale(1.1);
+}
+
+.image-desription {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--background-color);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: var(--medium-padding);
+  text-transform: uppercase;
+}
+
+/* ===== */
+/* Intro */
+/* ===== */
+
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-text {
+  color: var(--white);
+  font-size: var(--big-font);
+}
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  transform: translateY(100%);
+}
+
+.hide {
+  background: var(--background-color);
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+}
